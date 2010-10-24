@@ -1,3 +1,10 @@
 = User Pain bug triage for Redmine
 
-TODO
+User tracker to set type
+Priority
+A custom field to track likelihood
+And another to keep User Pain score
+
+The two custom fields must be in that order and likelihood 
+on top of the list for the plugin to work. 
+
