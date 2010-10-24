@@ -24,7 +24,6 @@ module RedmineUserPain
         pain_type = 1
         pain_priority = 1
         pain_likelihood = 1
-        print self.custom_field_values.inspect
         # taille liste tracker
         trackers = Tracker.all.length
         # taille liste priorité
@@ -52,11 +51,8 @@ module RedmineUserPain
         pain_likelihood = audience - pain_likelihood
         
         # index de l'audience 
-        print pain
         pain = pain_type * pain_priority * pain_likelihood
         user_pain = 100 * pain / max_pain
-        print '×'
-        print user_pain
 
         self.custom_field_values[1][:value] = (user_pain).to_s
         #total * user_pain / 100
