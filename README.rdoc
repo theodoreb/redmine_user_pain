@@ -2,12 +2,12 @@
 
 As advertised here : http://www.lostgarden.com/2008/05/improving-bug-triage-with-user-pain.html
 
-It's very alpha -and ugly- but it works.
+It's very alpha but it works.
 
 * Use tracker to set type of bug
 * Priority, same here
-* A custom field named "Likelihood" of type list
-* A custom field of named "User Pain" of type float or integer
+* A custom field named *Likelihood* of type list
+* A custom field named *User Pain* of type float or integer
 
 User pain is the product of Tracker, priority and Likelihood position
 where position is the position in the list for the field. If you have
