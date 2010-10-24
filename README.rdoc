@@ -1,10 +1,15 @@
 = User Pain bug triage for Redmine
 
-User tracker to set type
-Priority
-A custom field to track likelihood
-And another to keep User Pain score
+As advertised here : http://www.lostgarden.com/2008/05/improving-bug-triage-with-user-pain.html
 
-The two custom fields must be in that order and likelihood 
-on top of the list for the plugin to work. 
+It's very alpha and ugly but it works.
 
+* Use tracker to set type of bug
+* Priority, same here
+* A list custom field to track likelihood
+* A float custom field to keep User Pain score
+
+For the plugin to work, likelihood and user pain must be 
+the first fields in the order of custom fields.
+
+Patchs more than welcome.
