@@ -30,7 +30,15 @@ module RedmineUserPain
 
         max_pain = Tracker.all.length * IssuePriority.all.length * likelihood_values_length
         user_pain = 100 * pain / max_pain
-        self.custom_field_values[1][:value] = (user_pain).to_s
+ 
+        # set user pain score
+        user_pain_field = CustomField.find_by_name("User Pain")
+        self.custom_values.each do |x|
+          if x.custom_field_id == user_pain_field.id
+            x[:value] = (user_pain).to_s
+          end
+        end
+        
         return true
       end
     end    
