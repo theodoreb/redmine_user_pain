@@ -1,4 +1,5 @@
-= User Pain bug triage for Redmine
+User Pain bug triage for Redmine
+=============================
 
 As advertised here : http://www.lostgarden.com/2008/05/improving-bug-triage-with-user-pain.html
 
