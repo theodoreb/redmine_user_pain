@@ -24,11 +24,19 @@ module RedmineUserPain
           end
         end
 
+        tracker_pain = 0
+        # get enabled tracker for the current project
+        @project.trackers.each do |t|
+          if self.tracker_id == t.id
+            pain *= @project.trackers.length - tracker_pain
+          end
+          tracker_pain += 1
+        end
+
         # add type value to total pain
-        pain *= Tracker.all.length - (Tracker.find_by_id(self.tracker_id).position - 1)
         pain *= IssuePriority.all.length - (IssuePriority.find_by_id(self.priority_id).position - 1)
 
-        max_pain = Tracker.all.length * IssuePriority.all.length * likelihood_values_length
+        max_pain = @project.trackers.length * IssuePriority.all.length * likelihood_values_length
         user_pain = 100 * pain / max_pain
  
         # set user pain score
