@@ -5,6 +5,10 @@ module RedmineUserPain
   module IssuePatch
     def self.included(base) # :nodoc:
       base.send(:include, InstanceMethods)
+
+      base.class_eval do
+        alias_method_chain :css_classes, :css_pain
+      end
     end
     
     module InstanceMethods
@@ -36,6 +40,12 @@ module RedmineUserPain
         max_pain = @project.trackers.length * IssuePriority.all.length * likelihood_values_length
         return 100 * pain / max_pain
       end
+
+      def css_classes_with_css_pain
+       s = css_classes_without_css_pain << " user_pain-#{self.user_pain}" 
+       return s
+      end
+
     end    
 
   end

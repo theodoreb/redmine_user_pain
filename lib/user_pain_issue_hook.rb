@@ -1,5 +1,5 @@
 # Hooks to attach to the Redmine Issues.
-class BudgetIssueHook  < Redmine::Hook::ViewListener
+class UserPainIssueHook  < Redmine::Hook::ViewListener
 
   # Renders the Deliverable subject
   #
